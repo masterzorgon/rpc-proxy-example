@@ -18,7 +18,9 @@ export function NavBar() {
         <Tooltip placeholder="bottom" content="Devnet Only">
           <NavbarItem>
             {/* This page is a client component because of the WalletMultiButton component. If you want to make the navbar a SSR component, refacto the button component */}
-            <WalletMultiButton className='!bg-black hover:!bg-black transition-all duration-200 !rounded-lg' />
+            {/* <div className='bg-black'>
+              <WalletMultiButton />
+            </div> */}
           </NavbarItem>
         </Tooltip>
       </NavbarContent>

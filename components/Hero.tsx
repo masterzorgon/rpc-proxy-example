@@ -37,7 +37,7 @@ export function Hero() {
                   showTrue
                     ?
                     <h1 className="transition-all duration-200 ease-in-out text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                      You wallet is connected
+                      You wallet is <span className="bg-gradient-to-r from-[#e3572e] via-orange-300 to-[#e3572e] inline-block text-transparent bg-clip-text">connected</span>
                     </h1>
                     :
                     <h1 className="transition-all duration-200 ease-in-out text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
