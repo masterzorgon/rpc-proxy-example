@@ -1,7 +1,10 @@
-import { Providers } from "./providers";
+import { Providers } from "./_providers";
 import type { Metadata } from "next";
-import { NavBar } from "@/components/NavBar";
+import { NavBar } from "@/components/navbar";
 import "@/styles/globals.css";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata: Metadata = {
   title: "Wallet Adapter For Next.js 14 Tutorial by Helius",
@@ -19,6 +22,17 @@ export default function RootLayout({
         <Providers>
           <div className="absolute">
             <NavBar />
+            <ToastContainer
+              position="bottom-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              pauseOnHover
+              theme="light"
+            />
           </div>
           {children}
         </Providers>

@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@coral-xyz/anchor": "^0.29.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.15.15",
     "@nextui-org/react": "^2.2.9",
     "@solana/spl-token": "^0.3.8",
     "@solana/wallet-adapter-base": "^0.9.23",
@@ -17,12 +20,14 @@
     "@solana/wallet-adapter-react-ui": "^0.9.34",
     "@solana/wallet-adapter-solflare": "^0.6.28",
     "@solana/web3.js": "^1.87.6",
+    "axios": "^1.6.8",
     "framer-motion": "^10.16.4",
     "next": "14.0.2",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
-    "react-hot-toast": "^2.4.1"
+    "react-hot-toast": "^2.4.1",
+    "react-toastify": "^10.0.5"
   },
   "devDependencies": {
     "@types/node": "^20",
