@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 export function Hero() {
   const { publicKey } = useWallet();
 
-  const [address, setAddress] = useState<string | null>(publicKey ? publicKey.toString() : "");
+  const [address, setAddress] = useState<string>(publicKey ? publicKey.toString() : "");
   const [msg, setMsg] = useState<string | null>(null);
 
   const isValidSolanaAddress = (address: string) => {
@@ -17,14 +17,14 @@ export function Hero() {
       const newAddress = new web3.PublicKey(address);
       setAddress(newAddress.toString());
     } catch (error) {
-      setAddress(null);
+      setAddress("");
     }
 
     return /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(address.toString());
   };
 
   const handleAirdrop = async () => {
-    if (isValidSolanaAddress(address!)) {
+    if (isValidSolanaAddress(address)) {
       try {
         const data = {
           jsonrpc: "2.0",
@@ -56,10 +56,10 @@ export function Hero() {
         toast.error(msg)
       }
 
-      setAddress(null);
+      setAddress("");
     } else {
       setMsg("Invalid Solana Address");
-      setAddress(null);
+      setAddress("");
       toast.error(msg)
     }
   };
@@ -102,7 +102,7 @@ export function Hero() {
                 required
                 className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
                 placeholder="Enter your Solana wallet address"
-                value={address?.toString()}
+                value={address}
                 onChange={event => setAddress(event.target.value)}
               />
               <button
